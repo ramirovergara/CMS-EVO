@@ -23,7 +23,6 @@ import { LineMapsService } from './components/lineMaps/lineMaps.service';
   declarations: [
     Maps,
     BubbleMaps,
-    GoogleMaps,
     LeafletMaps,
     LineMaps
   ],
