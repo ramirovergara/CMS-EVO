@@ -76,7 +76,7 @@ a {
   font-size: 13px;
   color: $default-text;
   transition: padding-left 0.5s ease;
-  background-color: #a2a2a2;
+  // background-color: #a2a2a2;
 }
 
 .al-footer-main {
@@ -139,7 +139,6 @@ a {
 
 .al-content {
   padding: 8px 32px 8px 40px;
-  background-color: #a2a2a2;
 }
 
 @media screen and (max-width: $resXS) {
