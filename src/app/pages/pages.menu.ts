@@ -350,5 +350,97 @@ export const PAGES_MENU = [
         }
       }
     ]
+  },
+  {
+    path: 'Cajeros',
+    data: {
+      menu: {
+        title: 'Cajeros',
+        icon: 'ion-grid',
+        selected: false,
+        expanded: false,
+        order: 500,
+      }
+    },
+    children: [
+      {
+        path: 'basictables',
+        data: {
+          menu: {
+            title: 'general.menu.basic_tables',
+          }
+        }
+      },
+      {
+        path: 'smarttables',
+        data: {
+          menu: {
+            title: 'general.menu.smart_tables',
+          }
+        }
+      },
+      {
+        path: 'datatables',
+        data: {
+          menu: {
+            title: 'Data Tables',
+          }
+        }
+      },
+       {
+         path: 'hottables',
+         data: {
+           menu: {
+             title: 'Hot Tables',
+           }
+         }
+       }
+    ]
+  },
+  {
+    path: 'Oficinas de correo',
+    data: {
+      menu: {
+        title: 'Oficinas de correo',
+        icon: 'ion-grid',
+        selected: false,
+        expanded: false,
+        order: 500,
+      }
+    },
+    children: [
+      {
+        path: 'basictables',
+        data: {
+          menu: {
+            title: 'general.menu.basic_tables',
+          }
+        }
+      },
+      {
+        path: 'smarttables',
+        data: {
+          menu: {
+            title: 'general.menu.smart_tables',
+          }
+        }
+      },
+      {
+        path: 'datatables',
+        data: {
+          menu: {
+            title: 'Data Tables',
+          }
+        }
+      },
+       {
+         path: 'hottables',
+         data: {
+           menu: {
+             title: 'Hot Tables',
+           }
+         }
+       }
+    ]
   }
 ];
