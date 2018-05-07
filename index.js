@@ -1,19 +1,17 @@
 const express = require('express');
-const http = require('http');
-const path = require('path');
-
-const api = require('./server/routes/api');
-
 const app = express();
+const path = require('path');
+// Run the app by serving the static files
+// in the dist directory
+app.use(express.static(__dirname + '/dist'));
 
-app.use(express.static(path.join(__dirname, 'dist')));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+// For all GET requests, send back index.html
+// so that PathLocationStrategy can be use
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/dist/index.html'));
+  });
+// Start the app by listening on the default
+// Heroku portgit
+app.listen(process.env.PORT || 5000, function() {
+    console.log("Server started in port" + process.env.PORT + ".......");
 });
-
-const port = process.env.PORT || '3001';
-app.set('port', port);
-
-const server = http.createServer(app);
-server.listen(port, () => console.log('Running'));

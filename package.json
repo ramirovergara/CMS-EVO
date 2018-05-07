@@ -17,7 +17,7 @@
     "rimraf": "rimraf",
     "wintersmith": "wintersmith",
     "changelog": "standard-changelog",
-    "start": "ng serve",
+    "start": "node index.js",
     "start:hmr": "ng serve --hmr",
     "start:aot": "ng serve --aot",
     "start:prod": "ng serve --prod",
