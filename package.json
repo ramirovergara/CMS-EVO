@@ -21,10 +21,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-prod": "ng build --prod --aot",
-    "deploy-dev": "npm run build-prod && npm run static-serve-dev",
-    "static-serve-dev": "http-server -o --cors ./dist --port=3000 --host=localhost --entry-file=/index.html",
-    "static-serve": "http-server -o --cors ./dist --port=3000 --host=49018011605.netlify.com/ --entry-file=/index.html",
-    "deploy-heroku": "git push origin master && git push heroku master",
     "postinstall": "ng build --aot -prod"
   },
   "postinstall": "ng build --aot -prod",
