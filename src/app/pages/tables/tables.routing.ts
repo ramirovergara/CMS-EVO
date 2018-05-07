@@ -5,6 +5,7 @@ import { BasicTables } from './components/basicTables/basicTables.component';
 import { SmartTables } from './components/smartTables/smartTables.component';
 import { DataTables } from './components/dataTables/dataTables.component';
 import { HotTablesComponent } from './components/hotTables/hotTables.component';
+import { GoogleMaps } from '../maps/components/googleMaps';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
       { path: 'basictables', component: BasicTables },
       { path: 'smarttables', component: SmartTables },
       { path: 'datatables', component: DataTables },
-      { path: 'hottables', component: HotTablesComponent }
+      { path: 'hottables', component: HotTablesComponent },
+      { path: 'googlemaps', component: GoogleMaps },
     ]
   }
 ];

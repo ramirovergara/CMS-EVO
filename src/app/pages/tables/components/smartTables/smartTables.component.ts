@@ -33,23 +33,31 @@ export class SmartTables {
         type: 'number'
       },
       firstName: {
-        title: 'First Name',
+        title: 'Dirección',
         type: 'string'
       },
       lastName: {
-        title: 'Last Name',
+        title: 'Latitud',
         type: 'string'
       },
       username: {
-        title: 'Username',
+        title: 'Longitud',
         type: 'string'
       },
       email: {
-        title: 'E-mail',
+        title: 'Banco',
         type: 'string'
       },
       age: {
-        title: 'Age',
+        title: 'Ingreso',
+        type: 'number'
+      },
+      halcash: {
+        title: 'Halcash',
+        type: 'number'
+      },
+      pin: {
+        title: 'PIN',
         type: 'number'
       }
     }
