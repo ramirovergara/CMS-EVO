@@ -24,7 +24,8 @@ import { LineMapsService } from './components/lineMaps/lineMaps.service';
     Maps,
     BubbleMaps,
     LeafletMaps,
-    LineMaps
+    LineMaps,
+    GoogleMaps
   ],
   providers: [
     BubbleMapsService,

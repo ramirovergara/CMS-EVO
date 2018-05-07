@@ -31,7 +31,7 @@ import { FinanceDemoComponent } from './components/hotTables/handsontable/financ
 import { ScienceDemoComponent } from './components/hotTables/handsontable/science-demo';
 import { SportDemoComponent } from './components/hotTables/handsontable/sport-demo';
 import { AdvancedDemoComponent } from './components/hotTables/handsontable/advanced-demo';
-import { GoogleMaps } from '../maps/components/googleMaps';
+import { MapsModule } from '../maps/maps.module';
 
 @NgModule({
   imports: [
@@ -42,6 +42,7 @@ import { GoogleMaps } from '../maps/components/googleMaps';
     Ng2SmartTableModule,
     DataTableModule,
     HttpModule,
+    MapsModule,
     HotTableModule
   ],
   declarations: [
@@ -63,8 +64,7 @@ import { GoogleMaps } from '../maps/components/googleMaps';
     FinanceDemoComponent,
     ScienceDemoComponent,
     SportDemoComponent,
-    SheetDemoComponent,
-    GoogleMaps
+    SheetDemoComponent
   ],
   providers: [
     BasicTablesService,

@@ -16,6 +16,7 @@ import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
+import { GoogleMaps } from './pages/maps/components/googleMaps';
 
 
 // Application wide providers
