@@ -10,7 +10,9 @@ export class AtmTablesService {
       lastName: 'Otto',
       username: '@mdo',
       email: 'mdo@gmail.com',
-      age: '28'
+      age: 'Yes',
+      halcash: 'Yes',
+      pin: 'Yes'
     },
     {
       id: 2,
@@ -18,7 +20,8 @@ export class AtmTablesService {
       lastName: 'Thornton',
       username: '@fat',
       email: 'fat@yandex.ru',
-      age: '45'
+      age: '45',
+      pin: 'No'
     },
     {
       id: 3,

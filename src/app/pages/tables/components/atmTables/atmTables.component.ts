@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { AtmTablesService } from './atmTables.service';
 import { LocalDataSource } from 'ng2-smart-table';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'atm-tables',
@@ -11,7 +12,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 export class AtmTables {
 
   query: string = '';
-
+  input: string = '<input type="checkbox" checked></input>';
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -50,22 +51,41 @@ export class AtmTables {
       },
       age: {
         title: 'Ingreso',
-        type: 'number'
+        type: 'number',
+        editor: {
+          type: 'checkbox',
+          config: {
+            true: 'Yes',
+            false: 'No',
+          }
+        }
       },
       halcash: {
         title: 'Halcash',
-        type: 'number'
+        editor: {
+          type: 'checkbox',
+          config: {
+            true: 'Yes',
+            false: 'No',
+          }
+        }
       },
       pin: {
         title: 'PIN',
-        type: 'number'
+        editor: {
+          type: 'checkbox',
+          config: {
+            true: 'Yes',
+            false: 'No',
+          }
+        }
       }
     }
   };
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(protected service: AtmTablesService) {
+  constructor(protected service: AtmTablesService, private _sanitizer: DomSanitizer) {
     this.service.getData().then((data) => {
       this.source.load(data);
     });

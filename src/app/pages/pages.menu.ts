@@ -37,7 +37,15 @@ export const PAGES_MENU = [
                 title: 'general.menu.linemaps',
               }
             }
-          }
+          },
+          {
+            path: 'hottables',
+            data: {
+              menu: {
+                title: 'hotTables',
+              }
+            }
+          },
         ]
       },
       {
