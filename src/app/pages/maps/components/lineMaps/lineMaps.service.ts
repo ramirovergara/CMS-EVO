@@ -73,8 +73,9 @@ export class LineMapsService {
           } ],
 
           images: [ {
-            label: 'Flights from London',
-            svgPath: planeSVG,
+            //label: 'Flights from London',
+            label: 'Cajeros y oficinas',
+            //svgPath: planeSVG,
             left: 100,
             top: 45,
             labelShiftY: 5,
@@ -84,7 +85,7 @@ export class LineMapsService {
             labelRollOverColor: layoutColors.defaultText,
             labelFontSize: 20
           }, {
-            label: 'show flights from Vilnius',
+            label: 'Muestra cajeros y oficinas',
             left: 106,
             top: 70,
             labelColor: layoutColors.defaultText,

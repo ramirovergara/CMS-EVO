@@ -41,6 +41,7 @@
       "smart_tables": "Smart Tables",
       "maps": "Maps",
       "google_maps": "Google Maps",
+      "linemaps": "Line Maps",
       "leaflet_maps": "Leaflet Maps",
       "bubble_maps": "Bubble Maps",
       "line_maps": "Line Maps",
