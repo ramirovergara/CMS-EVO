@@ -27,30 +27,26 @@ export class AtmTables {
     },
     delete: {
       deleteButtonContent: '<i class="ion-trash-a"></i>',
-      confirmDelete: true
+      confirmDelete: true,
     },
     columns: {
-      id: {
-        title: 'ID',
-        type: 'number'
-      },
-      firstName: {
+      address: {
         title: 'Dirección',
-        type: 'string'
+        type: 'string',
       },
-      lastName: {
+      latitude: {
         title: 'Latitud',
-        type: 'string'
+        type: 'string',
       },
-      username: {
+      longitude: {
         title: 'Longitud',
-        type: 'string'
+        type: 'string',
       },
-      email: {
+      bank: {
         title: 'Banco',
-        type: 'string'
+        type: 'string',
       },
-      age: {
+      deposit: {
         title: 'Ingreso',
         type: 'custom',
         renderComponent: ButtonViewComponent,
@@ -81,6 +77,7 @@ export class AtmTables {
         }
       }
     }
+
   };
 
   source: LocalDataSource = new LocalDataSource();

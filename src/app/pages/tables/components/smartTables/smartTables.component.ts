@@ -6,7 +6,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 @Component({
   selector: 'smart-tables',
   templateUrl: './smartTables.html',
-  styleUrls: ['./smartTables.scss']
+  styleUrls: ['./smartTables.scss'],
 })
 export class SmartTables {
 
@@ -25,42 +25,38 @@ export class SmartTables {
     },
     delete: {
       deleteButtonContent: '<i class="ion-trash-a"></i>',
-      confirmDelete: true
+      confirmDelete: true,
     },
     columns: {
-      id: {
-        title: 'ID',
-        type: 'number'
-      },
-      firstName: {
+      address: {
         title: 'Dirección',
-        type: 'string'
+        type: 'string',
       },
-      lastName: {
+      latitude: {
         title: 'Latitud',
-        type: 'string'
+        type: 'number',
       },
-      username: {
+      longitude: {
         title: 'Longitud',
-        type: 'string'
+        type: 'number',
       },
-      email: {
+      bank: {
         title: 'Banco',
-        type: 'string'
+        type: 'string',
       },
-      age: {
+      deposit: {
         title: 'Ingreso',
-        type: 'number'
+        type: 'checkbox',
       },
       halcash: {
         title: 'Halcash',
-        type: 'number'
+        type: 'checkbox',
       },
       pin: {
         title: 'PIN',
-        type: 'number'
-      }
-    }
+        type: 'checkbox',
+      },
+    },
   };
 
   source: LocalDataSource = new LocalDataSource();
