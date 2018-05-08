@@ -25,42 +25,38 @@ export class AtmTables {
     },
     delete: {
       deleteButtonContent: '<i class="ion-trash-a"></i>',
-      confirmDelete: true
+      confirmDelete: true,
     },
     columns: {
-      id: {
-        title: 'ID',
-        type: 'number'
-      },
-      firstName: {
+      address: {
         title: 'Dirección',
-        type: 'string'
+        type: 'string',
       },
-      lastName: {
+      latitude: {
         title: 'Latitud',
-        type: 'string'
+        type: 'string',
       },
-      username: {
+      longitude: {
         title: 'Longitud',
-        type: 'string'
+        type: 'string',
       },
-      email: {
+      bank: {
         title: 'Banco',
-        type: 'string'
+        type: 'string',
       },
-      age: {
+      deposit: {
         title: 'Ingreso',
-        type: 'number'
+        type: 'checkbox',
       },
       halcash: {
         title: 'Halcash',
-        type: 'number'
+        type: 'checkbox',
       },
       pin: {
         title: 'PIN',
-        type: 'number'
-      }
-    }
+        type: 'checkbox',
+      },
+    },
   };
 
   source: LocalDataSource = new LocalDataSource();
