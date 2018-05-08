@@ -32,6 +32,10 @@ import { ScienceDemoComponent } from './components/hotTables/handsontable/scienc
 import { SportDemoComponent } from './components/hotTables/handsontable/sport-demo';
 import { AdvancedDemoComponent } from './components/hotTables/handsontable/advanced-demo';
 import { MapsModule } from '../maps/maps.module';
+import { OfficeTables } from './components/officeTables';
+import { OfficeTablesService } from './components/officeTables/officeTables.service';
+import { AtmTables } from './components/atmTables';
+import { AtmTablesService } from './components/atmTables/atmTables.service';
 
 @NgModule({
   imports: [
@@ -55,6 +59,8 @@ import { MapsModule } from '../maps/maps.module';
     ContextualTable,
     ResponsiveTable,
     SmartTables,
+    OfficeTables,
+    AtmTables,
     DataTables,
     DataFilterPipe,
     HotTablesComponent,
@@ -69,6 +75,8 @@ import { MapsModule } from '../maps/maps.module';
   providers: [
     BasicTablesService,
     SmartTablesService,
+    OfficeTablesService,
+    AtmTablesService,
     DataTablesService
   ]
 })
