@@ -37,6 +37,7 @@ import { OfficeTablesService } from './components/officeTables/officeTables.serv
 import { AtmTables } from './components/atmTables';
 import { AtmTablesService } from './components/atmTables/atmTables.service';
 
+
 @NgModule({
   imports: [
     CommonModule,

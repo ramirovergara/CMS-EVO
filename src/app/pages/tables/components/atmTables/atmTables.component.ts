@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { AtmTablesService } from './atmTables.service';
 import { LocalDataSource } from 'ng2-smart-table';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ButtonViewComponent } from './button-view/button-view.component';
 
 @Component({
   selector: 'atm-tables',
@@ -51,33 +52,32 @@ export class AtmTables {
       },
       age: {
         title: 'Ingreso',
-        type: 'number',
-        editor: {
-          type: 'checkbox',
-          config: {
-            true: 'Yes',
-            false: 'No',
-          }
+        type: 'custom',
+        renderComponent: ButtonViewComponent,
+        onComponentInitFunction(instance) {
+          instance.save.subscribe(row => {
+            alert();
+          });
         }
       },
       halcash: {
         title: 'Halcash',
-        editor: {
-          type: 'checkbox',
-          config: {
-            true: 'Yes',
-            false: 'No',
-          }
+        type: 'custom',
+        renderComponent: ButtonViewComponent,
+        onComponentInitFunction(instance) {
+          instance.change.subscribe(row => {
+            alert();
+          });
         }
       },
       pin: {
         title: 'PIN',
-        editor: {
-          type: 'checkbox',
-          config: {
-            true: 'Yes',
-            false: 'No',
-          }
+        type: 'custom',
+        renderComponent: ButtonViewComponent,
+        onComponentInitFunction(instance) {
+          instance.save.subscribe(row => {
+            alert();
+          });
         }
       }
     }

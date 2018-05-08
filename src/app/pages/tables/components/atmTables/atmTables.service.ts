@@ -12,7 +12,7 @@ export class AtmTablesService {
       email: 'mdo@gmail.com',
       age: 'Yes',
       halcash: 'Yes',
-      pin: 'Yes'
+      pin: true
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export class AtmTablesService {
       username: '@fat',
       email: 'fat@yandex.ru',
       age: '45',
-      pin: 'No'
+      pin: false
     },
     {
       id: 3,
@@ -29,7 +29,8 @@ export class AtmTablesService {
       lastName: 'Bird',
       username: '@twitter',
       email: 'twitter@outlook.com',
-      age: '18'
+      age: '18',
+      pin: true
     },
     {
       id: 4,
@@ -37,7 +38,8 @@ export class AtmTablesService {
       lastName: 'Snow',
       username: '@snow',
       email: 'snow@gmail.com',
-      age: '20'
+      age: '20',
+      pin: false
     },
     {
       id: 5,
