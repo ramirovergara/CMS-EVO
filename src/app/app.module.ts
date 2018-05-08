@@ -17,6 +17,7 @@ import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
 import { GoogleMaps } from './pages/maps/components/googleMaps';
+import { ButtonViewComponent } from './pages/tables/components/atmTables/button-view/button-view.component';
 
 
 // Application wide providers
@@ -37,7 +38,8 @@ export type StoreType = {
 @NgModule({
   bootstrap: [App],
   declarations: [
-    App
+    App,
+    ButtonViewComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -50,6 +52,7 @@ export type StoreType = {
     PagesModule,
     routing
   ],
+  entryComponents: [ButtonViewComponent],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     APP_PROVIDERS
   ]
