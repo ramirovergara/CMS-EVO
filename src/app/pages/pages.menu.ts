@@ -15,7 +15,7 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: 'smarttables',
+            path: 'atmTables',
             data: {
               menu: {
                 title: 'general.menu.atms',
@@ -53,7 +53,7 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: 'smarttables',
+            path: 'officetables',
             data: {
               menu: {
                 title: 'general.menu.offices',
