@@ -38,14 +38,6 @@ export const PAGES_MENU = [
               }
             }
           },
-          {
-            path: 'hottables',
-            data: {
-              menu: {
-                title: 'hotTables',
-              }
-            }
-          },
         ]
       },
       {
