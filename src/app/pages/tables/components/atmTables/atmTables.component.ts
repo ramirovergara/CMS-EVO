@@ -51,8 +51,8 @@ export class AtmTables {
         type: 'custom',
         renderComponent: ButtonViewComponent,
         onComponentInitFunction(instance) {
-          instance.save.subscribe(row => {
-            alert();
+          instance.change.subscribe(row => {
+            console.log('change');
           });
         }
       },
@@ -62,7 +62,7 @@ export class AtmTables {
         renderComponent: ButtonViewComponent,
         onComponentInitFunction(instance) {
           instance.change.subscribe(row => {
-            alert();
+            console.log('change');
           });
         }
       },
@@ -71,8 +71,9 @@ export class AtmTables {
         type: 'custom',
         renderComponent: ButtonViewComponent,
         onComponentInitFunction(instance) {
-          instance.save.subscribe(row => {
-            alert();
+          instance.change.subscribe(row => {
+            console.log(row + ' saved!');
+            // alert(`${row.name} saved!`);
           });
         }
       }

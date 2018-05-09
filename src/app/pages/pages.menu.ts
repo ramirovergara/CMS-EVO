@@ -21,23 +21,7 @@ export const PAGES_MENU = [
                 title: 'general.menu.atms',
               }
             }
-          },
-          {
-            path: 'googlemaps',
-            data: {
-              menu: {
-                title: 'general.menu.google_maps',
-              }
-            }
-          },
-          {
-            path: 'linemaps',
-            data: {
-              menu: {
-                title: 'general.menu.linemaps',
-              }
-            }
-          },
+          }
         ]
       },
       {
@@ -57,22 +41,6 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.offices',
-              }
-            }
-          },
-          {
-            path: 'googlemaps',
-            data: {
-              menu: {
-                title: 'general.menu.google_maps',
-              }
-            }
-          },
-          {
-            path: 'linemaps',
-            data: {
-              menu: {
-                title: 'general.menu.linemaps',
               }
             }
           }
