@@ -6,7 +6,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 @Component({
   selector: 'office-tables',
   templateUrl: './officeTables.html',
-  styleUrls: ['./officeTables.scss']
+  styleUrls: ['./officeTables.scss'],
 })
 export class OfficeTables {
 
@@ -60,10 +60,12 @@ export class OfficeTables {
   };
 
   source: LocalDataSource = new LocalDataSource();
+  offices: any;
 
   constructor(protected service: OfficeTablesService) {
-    this.service.getData().then((data) => {
-      this.source.load(data);
+    this.service.getOffices().subscribe(data => {
+      this.offices = data;
+      console.log(this.offices);
     });
   }
 

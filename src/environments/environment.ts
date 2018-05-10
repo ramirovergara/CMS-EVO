@@ -5,4 +5,10 @@
 
 export const environment = {
   production: false,
+
+  // MOCK-URLS
+  officesUrlMock: 'http://www.mocky.io/v2/5af432b855000056007a51e0',
+
+  // API-URLS
+  officesUrl: 'https://apiuat.evobanco.com:8443/evobanco/digital/atm/v2/offices',
 };

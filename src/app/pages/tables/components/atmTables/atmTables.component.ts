@@ -49,7 +49,7 @@ export class AtmTables {
       ingress: {
         title: 'Ingreso',
         editor: {
-          type: 'checkbox'
+          type: 'checkbox',
         },
         type: 'custom',
         renderComponent: ButtonViewComponent,
