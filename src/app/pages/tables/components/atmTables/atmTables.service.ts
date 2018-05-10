@@ -56,8 +56,8 @@ export class AtmTablesService {
         "longitude": -4.4323,
         "latitude": 36.717,
         "bank": "ING Direct",
-        "halcash": false,
-        "ingress": false,
+        "halcash": true,
+        "ingress": true,
         "changePin": false
     },
     {

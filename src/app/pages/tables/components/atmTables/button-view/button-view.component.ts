@@ -25,6 +25,6 @@ export class ButtonViewComponent implements ViewCell, OnInit {
     } else {
       this.renderValue = 'FALSE';
     }
-    this.change.emit(this.renderValue);
+    this.change.emit(this.rowData);
   }
 }

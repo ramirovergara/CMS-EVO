@@ -48,21 +48,29 @@ export class AtmTables {
       },
       ingress: {
         title: 'Ingreso',
+        editor: {
+          type: 'checkbox'
+        },
         type: 'custom',
         renderComponent: ButtonViewComponent,
-        onComponentInitFunction(instance) {
+        onComponentInitFunction: (instance) => {
           instance.change.subscribe(row => {
-            console.log('change');
+            let rowCopy = Object.assign({}, row);
+            rowCopy.ingress = !rowCopy.ingress;
+            this.source.update(row, rowCopy);
           });
         }
       },
       halcash: {
         title: 'Halcash',
+        mode: 'external',
         type: 'custom',
         renderComponent: ButtonViewComponent,
-        onComponentInitFunction(instance) {
+        onComponentInitFunction: (instance) => {
           instance.change.subscribe(row => {
-            console.log(row);
+            let rowCopy = Object.assign({}, row);
+            rowCopy.halcash = !rowCopy.halcash;
+            this.source.update(row, rowCopy);
           });
         }
       },
@@ -70,9 +78,11 @@ export class AtmTables {
         title: 'PIN',
         type: 'custom',
         renderComponent: ButtonViewComponent,
-        onComponentInitFunction(instance) {
+        onComponentInitFunction: (instance) => {
           instance.change.subscribe(row => {
-            console.log('change');
+            let rowCopy = Object.assign({}, row);
+            rowCopy.changePin = !rowCopy.changePin;
+            this.source.update(row, rowCopy);
           });
         }
       }
