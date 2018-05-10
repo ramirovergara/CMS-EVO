@@ -25,6 +25,7 @@
   left: 0;
   height: 18px;
   width: 18px;
+  border-radius: 3px;
   background-color: white;
 }
 
@@ -52,9 +53,9 @@
 
 /* Style the checkmark/indicator */
 .container2 .checkmark:after {
-  left: 7px;
+  left: 6px;
   top: 3px;
-  width: 5px;
+  width: 6px;
   height: 10px;
   border: solid white;
   border-width: 0 3px 3px 0;

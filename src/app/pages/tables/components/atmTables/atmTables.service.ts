@@ -14,7 +14,7 @@ export class AtmTablesService {
         "longitude": -15.4363,
         "latitude": 28.1235,
         "bank": "Banco Santander",
-        "halcash": false,
+        "halcash": true,
         "ingress": false,
         "changePin": false
     },
@@ -29,7 +29,7 @@ export class AtmTablesService {
         "latitude": 28.4671,
         "bank": "Kutxabank",
         "halcash": false,
-        "ingress": false,
+        "ingress": true,
         "changePin": false
     },
     {

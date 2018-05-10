@@ -46,7 +46,7 @@ export class AtmTables {
         title: 'Banco',
         type: 'string',
       },
-      deposit: {
+      ingress: {
         title: 'Ingreso',
         type: 'custom',
         renderComponent: ButtonViewComponent,
@@ -62,18 +62,17 @@ export class AtmTables {
         renderComponent: ButtonViewComponent,
         onComponentInitFunction(instance) {
           instance.change.subscribe(row => {
-            console.log('change');
+            console.log(row);
           });
         }
       },
-      pin: {
+      changePin: {
         title: 'PIN',
         type: 'custom',
         renderComponent: ButtonViewComponent,
         onComponentInitFunction(instance) {
           instance.change.subscribe(row => {
-            console.log(row + ' saved!');
-            // alert(`${row.name} saved!`);
+            console.log('change');
           });
         }
       }

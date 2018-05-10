@@ -8,7 +8,7 @@ import { ViewCell } from 'ng2-smart-table';
 })
 export class ButtonViewComponent implements ViewCell, OnInit {
 
-  renderValue: string = 'NO';
+  renderValue: string = 'FALSE';
 
   @Input() value: string | number;
   @Input() rowData: any;
@@ -20,12 +20,11 @@ export class ButtonViewComponent implements ViewCell, OnInit {
   }
 
   onChange() {
-    if (this.renderValue ==='NO') {
-      this.renderValue = 'YES';
+    if (this.renderValue === 'FALSE') {
+      this.renderValue = 'TRUE';
     } else {
-      this.renderValue = 'NO';
+      this.renderValue = 'FALSE';
     }
-
     this.change.emit(this.renderValue);
   }
 }
