@@ -8,7 +8,7 @@ import { ButtonViewComponent } from './button-view/button-view.component';
 @Component({
   selector: 'atm-tables',
   templateUrl: './atmTables.html',
-  styleUrls: ['./atmTables.scss']
+  styleUrls: ['./atmTables.scss'],
 })
 export class AtmTables {
 
@@ -30,21 +30,29 @@ export class AtmTables {
       confirmDelete: true,
     },
     columns: {
+      name: {
+        title: 'Nombre',
+        type: 'string',
+      },
       address: {
         title: 'Dirección',
         type: 'string',
       },
-      latitude: {
-        title: 'Latitud',
+      postalCode: {
+        title: 'Código Postal',
+        type: 'string',
+      },
+      phone: {
+        title: 'Teléfono',
         type: 'string',
       },
       longitude: {
         title: 'Longitud',
-        type: 'string',
+        type: 'number',
       },
-      bank: {
-        title: 'Banco',
-        type: 'string',
+      latitude: {
+        title: 'Latitud',
+        type: 'number',
       },
       ingress: {
         title: 'Ingreso',
@@ -55,11 +63,11 @@ export class AtmTables {
         renderComponent: ButtonViewComponent,
         onComponentInitFunction: (instance) => {
           instance.change.subscribe(row => {
-            let rowCopy = Object.assign({}, row);
+            const rowCopy = Object.assign({}, row);
             rowCopy.ingress = !rowCopy.ingress;
             this.source.update(row, rowCopy);
           });
-        }
+        },
       },
       halcash: {
         title: 'Halcash',
@@ -68,11 +76,11 @@ export class AtmTables {
         renderComponent: ButtonViewComponent,
         onComponentInitFunction: (instance) => {
           instance.change.subscribe(row => {
-            let rowCopy = Object.assign({}, row);
+            const rowCopy = Object.assign({}, row);
             rowCopy.halcash = !rowCopy.halcash;
             this.source.update(row, rowCopy);
           });
-        }
+        },
       },
       changePin: {
         title: 'PIN',
@@ -80,21 +88,21 @@ export class AtmTables {
         renderComponent: ButtonViewComponent,
         onComponentInitFunction: (instance) => {
           instance.change.subscribe(row => {
-            let rowCopy = Object.assign({}, row);
+            const rowCopy = Object.assign({}, row);
             rowCopy.changePin = !rowCopy.changePin;
             this.source.update(row, rowCopy);
           });
-        }
-      }
-    }
-
+        },
+      },
+    },
   };
 
   source: LocalDataSource = new LocalDataSource();
+  banks: any;
 
   constructor(protected service: AtmTablesService, private _sanitizer: DomSanitizer) {
-    this.service.getData().then((data) => {
-      this.source.load(data);
+    this.service.getBanks().subscribe(data => {
+      this.banks = data;   
     });
   }
 
