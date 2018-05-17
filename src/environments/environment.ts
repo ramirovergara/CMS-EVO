@@ -10,6 +10,9 @@ export const environment = {
   officesUrlMock: 'http://www.mocky.io/v2/5af994302e00006000278cb5',
   banksUrlMock: 'http://www.mocky.io/v2/5af578873100006c00002486',
 
+  // API-RAMI-URLS
+  officesUrlRami: 'http://192.168.200.77:8080/api/offices',
+
   // API-URLS
   officesUrl: 'https://apiuat.evobanco.com:8443/evobanco/digital/atm/v2/offices',
   banksUrl: 'https://apiuat.evobanco.com:8443/evobanco/digital/atm/v2/banks',
