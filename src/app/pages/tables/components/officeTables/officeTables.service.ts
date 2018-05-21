@@ -8,14 +8,34 @@ import { environment } from 'environments/environment';
 
 @Injectable()
 export class OfficeTablesService {
+  myHeaders = new Headers({ 'X-Token': '13263be2-dca3-4ef6-8c9e-2b86c6e4df97' });
+  options = new RequestOptions({ headers: this.myHeaders });
 
   constructor(private http: Http) { }
 
   getOffices(): Observable<Response> {
-    const myHeaders = new Headers({ 'X-Token': '13263be2-dca3-4ef6-8c9e-2b86c6e4df97' });   
-    const options = new RequestOptions({ headers: myHeaders });  
+    return this.http.get(environment.officesUrlRami, this.options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+  
+  createOffice(office: any): Observable<Response> {
+    return this.http.post(environment.officesUrlRami, office, this.options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
 
-    return this.http.get(environment.officesUrlMock, options)
+  deleteOffice(officeId: any): Observable<Response> {
+    // tslint:disable-next-line:prefer-template
+    return this.http.delete(environment.officesUrlRami + '/' + officeId, this.options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  putOffice(office: any): Observable<Response> {
+    const officeId = office.id;
+    // tslint:disable-next-line:prefer-template    
+    return this.http.put(environment.officesUrlRami + '/' + officeId, office, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }

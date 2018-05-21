@@ -15,7 +15,7 @@ export class AtmTablesService {
         const myHeaders = new Headers({ 'X-Token': '13263be2-dca3-4ef6-8c9e-2b86c6e4df97' });
         const options: RequestOptionsArgs = { headers: myHeaders };
 
-        return this.http.get(environment.officesUrlMock, options)
+        return this.http.get(environment.banksUrlRami, options)
             .map(this.extractData)
             .catch(this.handleError);
     }

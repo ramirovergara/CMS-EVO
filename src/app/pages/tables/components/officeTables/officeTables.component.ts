@@ -4,6 +4,7 @@ import { OfficeTablesService } from './officeTables.service';
 import { LocalDataSource } from 'ng2-smart-table';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ButtonViewComponent } from '../atmTables/button-view/button-view.component';
+import swal from 'sweetalert2';
 
 
 @Component({
@@ -20,11 +21,13 @@ export class OfficeTables {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
       createButtonContent: '<i class="ion-checkmark"></i>',
       cancelButtonContent: '<i class="ion-close"></i>',
+      confirmCreate: true,
     },
     edit: {
       editButtonContent: '<i class="ion-edit"></i>',
       saveButtonContent: '<i class="ion-checkmark"></i>',
       cancelButtonContent: '<i class="ion-close"></i>',
+      confirmSave: true,
     },
     delete: {
       deleteButtonContent: '<i class="ion-trash-a"></i>',
@@ -107,11 +110,70 @@ export class OfficeTables {
     });
   }
 
+  onCreateConfirm(event): void {
+    swal({
+      title: '¿Está seguro?',
+      text: 'La oficina se creará con los campos introducidos',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#ff0075',
+      cancelButtonColor: '#000',
+      confirmButtonText: 'Crear',
+    }).then((result) => {
+      if (result.value) {
+        this.service.createOffice(event).subscribe(data => {
+          swal(
+            'Creado',
+            'La oficina ha sido creada',
+            'success',
+          );
+        });
+      }
+    });
+  }
+
+  onEditConfirm(event): void {
+    swal({
+      title: '¿Está seguro?',
+      text: 'La oficina se guardará con los cambios realizados',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#ff0075',
+      cancelButtonColor: '#000',
+      confirmButtonText: 'Actualizar',
+    }).then((result) => {
+      if (result.value) {
+        this.service.putOffice(event).subscribe(data => {
+          swal(
+            'Actualizado',
+            'La oficina ha sido actualizada',
+            'success',
+          );
+        });
+      }
+    });
+  }
+
   onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-    } else {
-      event.confirm.reject();
-    }
+    swal({
+      title: '¿Está seguro?',
+      text: 'La oficina se borrará',
+      type: 'info',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#ff0075',
+      cancelButtonColor: '#000',
+      confirmButtonText: 'Borrar',
+    }).then((result) => {
+      if (result.value) {
+        this.service.deleteOffice(event.data.id).subscribe(data => {
+          swal(
+            'Borrado',
+            'La oficina ha sido borrada',
+            'success',
+          );
+        });
+      }
+    });
   }
 }
