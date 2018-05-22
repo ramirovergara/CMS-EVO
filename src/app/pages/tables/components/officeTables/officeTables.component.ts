@@ -158,7 +158,6 @@ export class OfficeTables {
     swal({
       title: '¿Está seguro?',
       text: 'La oficina se borrará',
-      type: 'info',
       showCancelButton: true,
       cancelButtonText: 'Cancelar',
       confirmButtonColor: '#ff0075',
