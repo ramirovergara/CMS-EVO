@@ -2,7 +2,10 @@
 
   <div class="row">
     <ba-card cardTitle="Office Tables" baCardClass="with-scroll" class="smart-table-container">
-      <ng2-smart-table [settings]="settings" [source]="offices" (createConfirm)="onCreateConfirm($event.newData)" (editConfirm)="onEditConfirm($event.newData)" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+      <!-- <ng2-smart-table [settings]="settings" [source]="offices" (createConfirm)="onCreateConfirm($event.newData)" (editConfirm)="onEditConfirm($event.newData)" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table> -->
+      <ul [dragula]='"bag-one"' [dragulaModel]='offices'>
+        <li *ngFor="let office of offices">{{office.name}}</li>
+      </ul>
     </ba-card>
   </div>
 

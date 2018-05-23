@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { DataTableModule } from "angular2-datatable";
-import { HttpModule } from "@angular/http";
+import { DataTableModule } from 'angular2-datatable';
+import { HttpModule } from '@angular/http';
 import { DataFilterPipe } from './components/dataTables/data-filter.pipe';
 import { HotTable, HotTableModule } from 'ng2-handsontable';
 
@@ -36,7 +36,7 @@ import { OfficeTables } from './components/officeTables';
 import { OfficeTablesService } from './components/officeTables/officeTables.service';
 import { AtmTables } from './components/atmTables';
 import { AtmTablesService } from './components/atmTables/atmTables.service';
-
+import { DragulaModule } from 'ng2-dragula';
 
 @NgModule({
   imports: [
@@ -48,7 +48,8 @@ import { AtmTablesService } from './components/atmTables/atmTables.service';
     DataTableModule,
     HttpModule,
     MapsModule,
-    HotTableModule
+    HotTableModule,
+    DragulaModule,
   ],
   declarations: [
     Tables,

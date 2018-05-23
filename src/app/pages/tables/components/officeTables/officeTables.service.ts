@@ -14,7 +14,7 @@ export class OfficeTablesService {
   constructor(private http: Http) { }
 
   getOffices(): Observable<Response> {
-    return this.http.get(environment.officesUrlRami, this.options)
+    return this.http.get(environment.officesUrlMock, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }
