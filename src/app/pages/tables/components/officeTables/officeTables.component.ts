@@ -1,20 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { OfficeTablesService } from './officeTables.service';
 import { LocalDataSource } from 'ng2-smart-table';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ButtonViewComponent } from '../atmTables/button-view/button-view.component';
 import swal from 'sweetalert2';
-
+import { DragulaService } from 'ng2-dragula';
 
 @Component({
   selector: 'office-tables',
   templateUrl: './officeTables.html',
   styleUrls: ['./officeTables.scss'],
 })
-export class OfficeTables {
+export class OfficeTables implements OnInit {
 
   query: string = '';
+  source: LocalDataSource = new LocalDataSource();
+  offices: any;
+
+  constructor(protected service: OfficeTablesService, 
+    private _sanitizer: DomSanitizer,
+    private dragula: DragulaService) {
+    this.service.getOffices().subscribe(data => {
+      this.offices = data;
+    });
+  }
+
+  ngOnInit() {
+    this.dragula.drag.subscribe(value => {
+      console.log(value);
+    });
+  }
 
   settings = {
     add: {
@@ -100,15 +116,6 @@ export class OfficeTables {
       },
     },
   };
-
-  source: LocalDataSource = new LocalDataSource();
-  offices: any;
-
-  constructor(protected service: OfficeTablesService, private _sanitizer: DomSanitizer) {
-    this.service.getOffices().subscribe(data => {
-      this.offices = data;
-    });
-  }
 
   onCreateConfirm(event): void {
     swal({
