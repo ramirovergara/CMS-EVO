@@ -14,28 +14,28 @@ export class OfficeTablesService {
   constructor(private http: Http) { }
 
   getOffices(): Observable<Response> {
-    return this.http.get(environment.officesUrlRami, this.options)
+    return this.http.get(environment.officesUrlMock, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }
   
   createOffice(office: any): Observable<Response> {
-    return this.http.post(environment.officesUrlRami, office, this.options)
+    return this.http.post(environment.officesUrlMock, office, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
   deleteOffice(officeId: any): Observable<Response> {
     // tslint:disable-next-line:prefer-template
-    return this.http.delete(environment.officesUrlRami + '/' + officeId, this.options)
+    return this.http.delete(environment.officesUrlMock + '/' + officeId, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
   putOffice(office: any): Observable<Response> {
     const officeId = office.id;
-    // tslint:disable-next-line:prefer-template    
-    return this.http.put(environment.officesUrlRami + '/' + officeId, office, this.options)
+    // tslint:disable-next-line:prefer-template
+    return this.http.put(environment.officesUrlMock + '/' + officeId, office, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }

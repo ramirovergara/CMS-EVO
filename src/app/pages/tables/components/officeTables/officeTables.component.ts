@@ -15,6 +15,14 @@ import swal from 'sweetalert2';
 export class OfficeTables {
 
   query: string = '';
+  source: LocalDataSource = new LocalDataSource();
+  offices: any;
+
+  constructor(protected service: OfficeTablesService, private _sanitizer: DomSanitizer) {
+    this.service.getOffices().subscribe(data => {
+      this.offices = data;
+    });
+  }
 
   settings = {
     add: {
@@ -100,15 +108,6 @@ export class OfficeTables {
       },
     },
   };
-
-  source: LocalDataSource = new LocalDataSource();
-  offices: any;
-
-  constructor(protected service: OfficeTablesService, private _sanitizer: DomSanitizer) {
-    this.service.getOffices().subscribe(data => {
-      this.offices = data;
-    });
-  }
 
   onCreateConfirm(event): void {
     swal({
